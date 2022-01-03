@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single"
+        android:id="@+id/list">
+        <item android:id="@+id/nav_list"
+            android:icon="@drawable/ic_list"
+            android:title="Mat lista"/>
+        <item android:id="@+id/nav_add"
+            android:icon="@drawable/ic_add"
+            android:title="Lägg till"/>
+    </group>
+
+    <group android:checkableBehavior="single"
+        android:id="@+id/pictures">
+        <item android:id="@+id/nav_pictures"
+            android:icon="@drawable/ic_image"
+            android:title="Mat bilder"/>
+        <item android:id="@+id/nav_kyl"
+            android:icon="@drawable/ic_fridge"
+            android:title="Kylskåp"/>
+        <item android:id="@+id/nav_frys"
+            android:icon="@drawable/ic_frys"
+            android:title="Frys"/>
+        <item android:id="@+id/nav_skafferi"
+            android:icon="@drawable/ic_skafferi"
+            android:title="Skafferi"/>
+        <item android:id="@+id/nav_krydd"
+            android:icon="@drawable/ic_kryddor"
+            android:title="Kryddor"/>
+    </group>
+
+    <group android:checkableBehavior="single"
+        android:id="@+id/shopping">
+        <item android:id="@+id/shopping_list"
+            android:icon="@drawable/ic_shopping_list"
+            android:title="Handlingslista"/>
+    </group>
+
+</menu>

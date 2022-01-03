@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_nav"
+    app:startDestination="@id/startMenuFragment">
+    <fragment
+        android:id="@+id/listFragment"
+        android:label="Mat lista"
+        android:name="com.example.edu.seho.myhome.fragments.list.ListFragment"
+        tools:layout="@layout/fragment_list">
+        <action
+            android:id="@+id/action_listFragment_to_addFragment"
+            app:destination="@id/addFragment" />
+        <action
+            android:id="@+id/action_listFragment_to_updateFragment"
+            app:destination="@id/updateFragment" />
+        <action
+            android:id="@+id/action_listFragment_to_startMenuFragment"
+            app:destination="@id/startMenuFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addFragment"
+        android:label="Lägg till"
+        android:name="com.example.edu.seho.myhome.fragments.add.AddFragment"
+        tools:layout="@layout/fragment_add" >
+        <action
+            android:id="@+id/action_addFragment_to_listFragment"
+            app:destination="@id/listFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/updateFragment"
+        android:label="Uppdatera"
+        android:name="com.example.edu.seho.myhome.fragments.update.UpdateFragment"
+        tools:layout="@layout/fragment_update" >
+        <action
+            android:id="@+id/action_updateFragment_to_listFragment"
+            app:destination="@id/listFragment" />
+        <argument
+            android:name="currentStorage"
+            app:argType="com.example.edu.seho.myhome.model.Storage" />
+    </fragment>
+    <fragment
+        android:id="@+id/shoppinglist"
+        android:name="com.example.edu.seho.myhome.fragments.shoppinglist.ShoppingListFragment"
+        android:label="Handlingslista"
+        tools:layout="@layout/fragment_shoppinglist" >
+        <action
+            android:id="@+id/action_shoppinglist_to_startMenuFragment"
+            app:destination="@id/startMenuFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/startMenuFragment"
+        android:name="com.example.edu.seho.myhome.fragments.startmenu.StartMenuFragment"
+        android:label="Start meny" >
+        <action
+            android:id="@+id/action_startMenuFragment_to_shoppinglist"
+            app:destination="@id/shoppinglist" />
+        <action
+            android:id="@+id/action_startMenuFragment_to_listFragment"
+            app:destination="@id/listFragment" />
+        <action
+            android:id="@+id/action_startMenuFragment_to_foodPicturesFragment"
+            app:destination="@id/foodPicturesFragment" />
+        <action
+            android:id="@+id/action_startMenuFragment_to_addFragment"
+            app:destination="@id/addFragment" />
+        <action
+            android:id="@+id/action_startMenuFragment_to_pictureTakerFragment"
+            app:destination="@id/pictureTakerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/foodPicturesFragment"
+        android:name="com.example.edu.seho.myhome.fragments.foodPictures.FoodPicturesFragment"
+        android:label="Mat bilder"
+        tools:layout="@layout/fragment_food_pictures" >
+        <action
+            android:id="@+id/action_foodPicturesFragment_to_startMenuFragment"
+            app:destination="@id/startMenuFragment" />
+        <action
+            android:id="@+id/action_foodPicturesFragment_to_pictureTakerFragment"
+            app:destination="@id/pictureTakerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/pictureTakerFragment"
+        android:name="com.example.edu.seho.myhome.fragments.foodPictures.PictureTakerFragment"
+        android:label="Ta en bild"
+        tools:layout="@layout/fragment_picture_taker" >
+        <action
+            android:id="@+id/action_pictureTakerFragment_to_foodPicturesFragment"
+            app:destination="@id/foodPicturesFragment" />
+        <argument
+            android:name="picture"
+            app:argType="string" />
+    </fragment>
+</navigation>
